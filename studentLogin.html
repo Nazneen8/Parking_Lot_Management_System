@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Portal Login</title>
+  <link rel="stylesheet" href="CSS/styles.css" />
+</head>
+<body>
+
+  <a href="index.html">
+    <button class="back-btn">Back</button>
+    </a>
+    <br>
+  <div class="container">
+    <div class="left-section">
+      <!--<button class="back-btn">Back</button>-->
+
+      <h2>Welcome to your<br><span class="highlight">Student Portal!</span></h2>
+
+      <p>
+        Log in by clicking on <strong>Log in with SSO</strong>. If you are experiencing a problem logging into your student portal or you have forgotten your password - click on the Forgot Password link to reset your password.
+      </p>
+
+      <p>
+        When resetting your password, please note the following guidelines when selecting a new password:
+      </p>
+
+      <ol>
+        <li><strong>Your password must be a minimum of 8</strong></li>
+        <li><strong>Your password must include a minimum of 1 special</strong></li>
+        <li><strong>Your password must include a minimum of 1 numerical digit</strong></li>
+        <li><strong>Your password must include a minimum of 1 capital letter</strong></li>
+      </ol>
+
+      <p class="note">
+        Please do not attempt to reset your password multiple times, it should take 5 - 10 minutes for the password to be delivered via SMS. If you are still unable to log onto your account, check your internet connection and try clearing your browser cache by pressing the following buttons on your keyboard <strong>CTRL+SHIFT+R</strong> or <strong>CTRL+F5</strong>
+      </p>
+
+<!---    <div class="logo">
+        <img src="images/RC_logo.png" alt="Rosebank College Logo">
+      </div> -->
+    </div>
+
+    <div class="right-section">
+      <form class="login-form">
+        <label for="email">Email or Username</label>
+        <div class="input-wrapper">
+          <img src="https://img.icons8.com/ios-filled/24/fa314a/user.png"/>
+          <input type="text" id="email" placeholder="Email or Username" required />
+        </div>
+
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <img src="https://img.icons8.com/ios-filled/24/fa314a/fingerprint.png"/>
+          <input type="password" id="password" placeholder="***********" required />
+        </div>
+
+       
+        <button type="submit" class="studentLogin-btn">Log In</button>
+       <a href="userDashboard.html">
+        <button type="button" class="sso-btn">Login with SSO</button>
+       </a>
+        <a href="#" class="forgot-link">Forgot Password?</a>
+      </form>
+    </div>
+
+     <div class="logo">
+        <img src="images/RC_logo.png" alt="Rosebank College Logo">
+      </div>
+  </div>
+</body>
+</html>

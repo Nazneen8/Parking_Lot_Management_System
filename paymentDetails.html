@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<!-- Payment Details Page -->
+  <div class="container hidden" id="details-page">
+    <header>
+      <button class="back-btn" onclick="showPlans()">←</button>
+      <h1>PAYMENT</h1>
+      <a href="userDashboard.html">
+      <button class="home-btn">🏠</button>
+      </a>
+    </header>
+
+    <p class="subtitle">Enter your banking details below:</p>
+
+    <div class="secure-banner">
+      <span class="lock">🔒</span>
+      <p>Your information is safe and secure</p>
+    </div>
+
+    <form class="payment-form">
+      <label>Name</label>
+      <input type="text" value="Kim Jones" />
+
+      <label>Email</label>
+      <input type="email" value="ST10973468@reconnect.edu.za" />
+
+      <label>Card number</label>
+      <input type="text" value="1234 5678 9102 3456" />
+
+      <div class="row">
+        <div class="half">
+          <label>Expiration date</label>
+          <input type="text" placeholder="MM / YY" />
+        </div>
+        <div class="half">
+          <label>CVV</label>
+          <input type="text" placeholder="123" />
+        </div>
+      </div>
+
+      <button type="submit" class="confirm-btn">Confirm Payment</button>
+    </form>
+  </div>
+
+  <script>
+    const planPage = document.getElementById("plan-page");
+    const detailsPage = document.getElementById("details-page");
+    const payButtons = document.querySelectorAll(".pay-btn");
+
+    payButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        planPage.classList.add("hidden");
+        detailsPage.classList.remove("hidden");
+      });
+    });
+
+    function showPlans() {
+      detailsPage.classList.add("hidden");
+      planPage.classList.remove("hidden");
+    }
+  </script>
+
+</head>
+</html>
