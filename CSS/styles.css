@@ -352,12 +352,9 @@ html, body {
 /****************************************************************************************************************************/
 /*PAYMENTS PAGE*/
 
-/** {
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
 
-body {
+
+payment-body {
   background-color: #f9f9f9;
   color: #111;
   display: flex;
@@ -367,7 +364,7 @@ body {
   margin: 0;
 }
 
-.container {
+.payment-container {
   background: #fff;
   width: 600px;
   border-radius: 16px;
@@ -386,9 +383,12 @@ header {
   align-items: center;
 }
 
-header h1 {
+/*header h1 {
   font-size: 1.5rem;
-}
+  justify-content: center;
+  display: flex;
+  margin: auto;
+}*/
 
 .back-btn, .home-btn {
   background: none;
@@ -406,7 +406,7 @@ header h1 {
 
 .plans {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   justify-content: center;
 }
 
@@ -414,11 +414,11 @@ header h1 {
   border: 1.5px solid #ccc;
   border-radius: 10px;
   padding: 15px;
-  width: 100px;
+  width: 150px;
   transition: 0.3s;
 }
 
-.plan.selected {
+.plan.selected:hover {
   border-color: #ff4b4b;
 }
 
@@ -443,7 +443,7 @@ header h1 {
   font-size: 0.8rem;
 }
 
-.pay-btn.red {
+.pay-btn:hover {
   background: #ff4b4b;
 }
 
@@ -451,4 +451,4 @@ header h1 {
   width: 130px;
   margin-top: 30px;
 }
-*/
+
