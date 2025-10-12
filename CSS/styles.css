@@ -201,6 +201,7 @@ body {
   cursor: pointer;
   margin-top: 10px;
   transition: 0.3s;
+  width: 350px;
 }
 
 .sso-btn:hover{
@@ -217,27 +218,37 @@ body {
 
 /*******************************************************************************************************************/
 /*USER DASHBOARD*/
-
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
 }
 
-.container {
-  display: flex;
-  height: 100vh;
+/* Make sure the page takes full height */
+html, body {
+  height: 100%;
+  width: 100%;
 }
 
-/* Sidebar */
+/* Sidebar styling */
 .sidebar {
+  position: fixed;           /* Sticks to the left side */
+  top: 0;
+  left: 0;
   width: 250px;
+  height: 100vh;             /* Full viewport height */
   background: #ff0000;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px 0;
+}
+
+/* Optional: make content beside sidebar visible */
+.main-content {
+  margin-left: 250px;        /* So it doesn’t hide under sidebar */
+  padding: 20px;
 }
 
 .profile {
