@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<!-- Payment Details Page -->
-  <div class="container hidden" id="details-page">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Details</title>
+  <link rel="stylesheet" href="CSS/styles.css" />
+</head>
+<body>
+
+  <div class="paymentDetails-container">
     <header>
-      <button class="back-btn" onclick="showPlans()">←</button>
+      <button class="back-btn">←</button>
       <h1>PAYMENT</h1>
-      <a href="userDashboard.html">
       <button class="home-btn">🏠</button>
-      </a>
     </header>
 
     <p class="subtitle">Enter your banking details below:</p>
@@ -19,24 +22,27 @@
       <p>Your information is safe and secure</p>
     </div>
 
-    <form class="payment-form">
-      <label>Name</label>
-      <input type="text" value="Kim Jones" />
+    <form class="paymentDetails-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
 
-      <label>Email</label>
-      <input type="email" value="ST10973468@reconnect.edu.za" />
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
 
-      <label>Card number</label>
-      <input type="text" value="1234 5678 9102 3456" />
+      <label for="card-number">Card number</label>
+      <div class="card-input">
+        <span class="card-icon">💳</span>
+        <input type="text" id="card-number" placeholder="1234 5678 9102 3456" required>
+      </div>
 
       <div class="row">
         <div class="half">
-          <label>Expiration date</label>
-          <input type="text" placeholder="MM / YY" />
+          <label for="expiry">Expiration date</label>
+          <input type="text" id="expiry" placeholder="MM / YY" required>
         </div>
         <div class="half">
-          <label>CVV</label>
-          <input type="text" placeholder="123" />
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" placeholder="123" required>
         </div>
       </div>
 
@@ -44,23 +50,5 @@
     </form>
   </div>
 
-  <script>
-    const planPage = document.getElementById("plan-page");
-    const detailsPage = document.getElementById("details-page");
-    const payButtons = document.querySelectorAll(".pay-btn");
-
-    payButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        planPage.classList.add("hidden");
-        detailsPage.classList.remove("hidden");
-      });
-    });
-
-    function showPlans() {
-      detailsPage.classList.add("hidden");
-      planPage.classList.remove("hidden");
-    }
-  </script>
-
-</head>
-</html>
+</body>
+</html> 
