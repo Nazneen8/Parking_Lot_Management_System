@@ -64,7 +64,7 @@ body {
 
 /*****************************************************************************************/
 
-/*STUDENT LOGIN*/
+/*LOGIN PAGES*/
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -95,7 +95,7 @@ body {
   justify-content: center;
 }
 
-.back-btn {
+.index-btn {
   background-color: red;
   color: white;
   border: none;
@@ -217,7 +217,7 @@ body {
 }
 
 /*******************************************************************************************************************/
-/*USER DASHBOARD*/
+/*DASHBOARDS*/
 * {
   margin: 0;
   padding: 0;
@@ -247,8 +247,9 @@ html, body {
 
 /* Optional: make content beside sidebar visible */
 .main-content {
-  margin-left: 250px;        /* So it doesn’t hide under sidebar */
-  padding: 20px;
+  margin: 0px;        /* So it doesn’t hide under sidebar */
+  padding: 10px;
+  display: flex;
 }
 
 .profile {
