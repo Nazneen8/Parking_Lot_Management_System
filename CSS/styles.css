@@ -672,3 +672,46 @@ button {
 button:hover {
   background: #e40303;
 }
+
+/**************************************************************************************************************/
+/* NOTIFICATIONS PAGE */
+
+.notifications-container {
+  display: flex;
+  align-items: flex-start;
+  padding: -150px;
+}
+
+.notification-card {
+  flex: 1;
+  padding: 30px;
+  margin-left: -500px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.plan-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Color alignment per package */
+.plan-card.month-to-month {
+  background-color: #5e9cdd; /* Blue */
+}
+
+.plan-card.yearly {
+  background-color: #54be6d; /* Green */
+}
+
+.plan-card.daily {
+  background-color: #c9af5f; /* Yellow */
+  color: #333;
+}
+
+

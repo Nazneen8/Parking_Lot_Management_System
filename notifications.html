@@ -8,6 +8,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="CSS/styles.css">
 </head>
+<a href="studentDashboard.html">
+      <button class="back-btn">←</button>
+      </a>
 <body>
   <div class="container">
     <!-- Sidebar -->
@@ -25,15 +28,50 @@
         <a href="studentLogin.html" class="menu-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
       </div>
     </aside>
-
     <!-- Main Content -->
-    <main class="main-content">
-      <div class="status">
-        <div class="noti">
-          <h4>Your notifications will appear here</h4>
-        </div>
+    <div id="notification-card" class="notification-card">
+      <!-- Dynamic plan info will appear here -->
+    </div>
+  </div>
+  
+
+  <script>
+    // Retrieve the plan from localStorage
+    const plan = JSON.parse(localStorage.getItem("selectedPlan")) || { name: "No plan selected", price: "N/A" };
+
+    const notificationCard = document.getElementById("notification-card");
+
+    // Calculate expiry date based on plan type
+    const today = new Date();
+    let expiryDate;
+
+    if (plan.name == "Month-to-month") {
+      expiryDate = new Date(today.setMonth(today.getMonth() + 1));
+    } else if (plan.name === "Yearly") {
+      expiryDate = new Date(today.setFullYear(today.getFullYear() + 1));
+    } else if (plan.name === "Daily") {
+      expiryDate = new Date(today.setDate(today.getDate() + 1));
+    } else {
+      expiryDate = null;
+    }
+
+    // Format date
+    const formatDate = (date) => {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return date ? date.toLocaleDateString('en-ZA', options) : 'N/A';
+    };
+
+    // Display the card content dynamically
+    notificationCard.innerHTML = `
+      <div class="plan-card ${plan.name.toLowerCase().replaceAll(' ', '-')}">
+        <h2>${plan.name}</h2>
+        <p><strong>Price:</strong> ${plan.price}</p>
+        <p><strong>Expiry Date:</strong> ${formatDate(expiryDate)}</p>
       </div>
-    </main>
+    `;
+
+   
+  </script>
   </div>
 </body>
 </html>
