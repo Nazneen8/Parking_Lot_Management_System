@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* Should allow user to make payment first before making parking unavilable. */
+
 /*const parkingLot = document.getElementById('parkingLot');
 const occupiedCount = document.getElementById('occupiedCount');
 const availableCount = document.getElementById('availableCount');
