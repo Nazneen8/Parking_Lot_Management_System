@@ -32,15 +32,85 @@
       <div class="status">
         <div class="occupied">
           <h4>OCCUPIED</h4>
-          <span class="count">1</span>
+          <span class="count">0</span>
         </div>
         <div class="available">
           <h4>AVAILABLE</h4>
-          <span class="count green">9</span>
+          <span class="count green">20</span>
         </div>
       </div>
+      <br><br><br>
      <!--ADD BUTTONS INDICATING PARKING-->
+     <div class="parking-lot">
+    <button class="parking-space" data-status="grey">A1</button>
+    <button class="parking-space" data-status="grey">A2</button>
+    <button class="parking-space" data-status="grey">A3</button>
+    <button class="parking-space" data-status="grey">A4</button>
+    <button class="parking-space" data-status="grey">A5</button>
+    <button class="parking-space" data-status="grey">A6</button>
+    <button class="parking-space" data-status="grey">A7</button>
+    <button class="parking-space" data-status="grey">A8</button>
+    <button class="parking-space" data-status="grey">A9</button>
+    <button class="parking-space" data-status="grey">A10</button>
+  </div>
+<br><br>
+    <div class="parking-lot">
+    <button class="parking-space" data-status="grey">B1</button>
+    <button class="parking-space" data-status="grey">B2</button>
+    <button class="parking-space" data-status="grey">B3</button>
+    <button class="parking-space" data-status="grey">B4</button>
+    <button class="parking-space" data-status="grey">B5</button>
+    <button class="parking-space" data-status="grey">B6</button>
+    <button class="parking-space" data-status="grey">B7</button>
+    <button class="parking-space" data-status="grey">B8</button>
+    <button class="parking-space" data-status="grey">B9</button>
+    <button class="parking-space" data-status="grey">B10</button>
+  </div>
+  
+
+  <!-- JAVASCRIPT TO ALLOW BUTTONS TO CHANGE  COLOUR ONCE SELECTED -->
+   <!--- <script>
+    const apiUrl = 'http://localhost:3000/spaces';
+
+    async function loadSpaces() {
+      const res = await fetch(apiUrl);
+      const spaces = await res.json();
+
+      const lot = document.getElementById('parkingLot');
+      lot.innerHTML = '';
+
+      spaces.forEach(space => {
+        const btn = document.createElement('button');
+        btn.textContent = space.SpaceName;
+        btn.className = 'parking-space';
+        btn.dataset.status = space.Status;
+
+        btn.addEventListener('click', async () => {
+          let newStatus;
+          if (space.Status === 'grey') newStatus = 'red';
+          else if (space.Status === 'red') newStatus = 'green';
+          else newStatus = 'grey';
+
+          space.Status = newStatus;
+          btn.dataset.status = newStatus;
+
+          await fetch(`${apiUrl}/${space.SpaceID}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ status: newStatus })
+          });
+        });
+
+        lot.appendChild(btn);
+      });
+    }
+
+    loadSpaces();
+  </script>  -->
+
     </main>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

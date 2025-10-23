@@ -27,6 +27,20 @@
       <label for="plan">Plan</label>
     </form>
 
+    <script>
+    const bayName = localStorage.getItem('selectedBay');
+    document.getElementById('bayName').textContent = bayName;
+
+    document.getElementById('payBtn').addEventListener('click', () => {
+      const status = JSON.parse(localStorage.getItem('parkingStatus')) || {};
+      status[bayName] = 'unavailable';
+      localStorage.setItem('parkingStatus', JSON.stringify(status));
+
+      alert(`Payment successful! Bay ${bayName} is now occupied.`);
+      window.location.href = 'index.html';
+    });
+  </script>
+
     </div>
 </body>
 </html>
