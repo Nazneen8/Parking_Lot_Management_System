@@ -25,7 +25,7 @@
     <p class="subtitle">Make a payment to gain access to the parking lot.<br>
     Choose your desired plan below:</p>
 
-    <div class="plans">
+    <!--<div class="plans">
       <div class="plan">
         <h3>Month-to-month</h3>
         <p>R200 per month</p>
@@ -49,9 +49,40 @@
         <button class="pay-btn">Pay</button>
         </a>
       </div>
+    </div>-->
+
+    <div class="plans">
+      <div class="plan">
+        <h3>Month-to-month</h3>
+        <p>R200 per month</p>
+        <button class="pay-btn" onclick="selectPlan('Month-to-month', 'R200 per month')">Pay</button>
+      </div>
+
+      <div class="plan">
+        <h3>Yearly</h3>
+        <p>R2000 per year</p>
+        <button class="pay-btn" onclick="selectPlan('Yearly', 'R2000 per year')">Pay</button>
+      </div>
+
+      <div class="plan">
+        <h3>Daily</h3>
+        <p>R20 per day</p>
+        <button class="pay-btn" onclick="selectPlan('Daily', 'R20 per day')">Pay</button>
+      </div>
     </div>
 
-    <img src="images/RC_logo.png" alt="Rosebank College Logo" class="college-logo">
+     <img src="images/RC_logo.png" alt="Rosebank College Logo" class="college-logo">
+  </div>
+
+ 
+
+  <script>
+    // Store the chosen plan and navigate to verification page
+    function selectPlan(name, price) {
+      localStorage.setItem('selectedPlan', JSON.stringify({ name, price }));
+      window.location.href = 'paymentDetails.html';
+    }
+  </script>
   </div>
 
 </payment-body>

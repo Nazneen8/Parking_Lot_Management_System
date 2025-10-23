@@ -388,9 +388,7 @@ html, body {
 /****************************************************************************************************************************/
 /*PAYMENTS PAGE*/
 
-
-
-payment-body {
+.payment-body {
   background-color: #f9f9f9;
   color: #111;
   display: flex;
@@ -427,8 +425,8 @@ header h1 {
 }
 
 .back-btn, .home-btn {
-  background: none;
-  border: none;
+  background: black;
+  border: black;
   font-size: 1.3rem;
   cursor: pointer;
 }
@@ -450,7 +448,7 @@ header h1 {
   border: 1.5px solid #ccc;
   border-radius: 10px;
   padding: 15px;
-  width: 150px;
+  width: 250px;
   transition: 0.3s;
 }
 
@@ -476,7 +474,7 @@ header h1 {
   padding: 5px 10px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .pay-btn:hover {
@@ -633,3 +631,44 @@ header h1 {
   background-color: #e00000;
 }
 
+/**************************************************************************************************************************************/
+/* PAYMENT VERIFICATION*/
+.verify-body, .verify-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  text-align: center;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.verify-plans {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.verify-plan {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  width: 30%;
+  min-width: 180px;
+}
+
+button {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e40303;
+}
