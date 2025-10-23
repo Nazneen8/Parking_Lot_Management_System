@@ -85,14 +85,14 @@ body {
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  
 }
 
 .right-section {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+ 
+  
 }
 
 .index-btn {
@@ -126,12 +126,14 @@ body {
   margin: 10px 0;
   font-size: 15px;
   line-height: 1.5;
+  color: #747373;
 }
 
 .left-section ol {
   margin-left: 20px;
   margin-top: 15px;
   font-size: 15px;
+  color: #747373;
 }
 
 .note {
@@ -215,6 +217,7 @@ body {
   font-size: 14px;
   text-decoration: none;
 }
+
 
 /*******************************************************************************************************************/
 /*DASHBOARDS*/
