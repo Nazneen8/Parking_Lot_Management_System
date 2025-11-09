@@ -1,82 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Payment Verification</title>
-  <link rel="stylesheet" href="CSS/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Verification</title>
+    <link rel="stylesheet" href="CSS/styles.css" />
 </head>
-<verify-body>
-    <!--<div class="verification-container">
-      <header>
 
-        <a href="paymentDetails.html">
-      <button class="back-btn">←</button>
-        </a>
+<body>
+    <div class="verify-container">
+        <header>
+            <a href="paymentDetails.html">
+                <button class="back-btn">←</button>
+            </a>
+            <h1>VERIFY PAYMENT</h1>
+            <a href="studentDashboard.html">
+                <button class="home-btn">🏠</button>
+            </a>
+        </header>
 
-      <h1>VERIFY PAYMENT</h1>
+        <p class="subtitle">Please confirm the details below.</p>
 
-      <a href="studentDashboard.html">
-      <button class="home-btn">🏠</button>
-      </a>
+        <div id="plan-details"></div>
 
-    </header>
+        <br>
+        <p>Please confirm your payment details before proceeding.</p>
+        <br>
 
-    <p class="subtitle">Please confirm the details below.</p>
-    <form class="verify-form">
-      <label for="plan">Plan</label>
-    </form>
+        <button onclick="confirmPayment()" class="confirm-btn">Confirm Payment</button>
+        <button onclick="cancelPayment()" class="cancel-btn">Cancel</button>
+    </div>
 
     <script>
-    const bayName = localStorage.getItem('selectedBay');
-    document.getElementById('bayName').textContent = bayName;
+        const plan = JSON.parse(localStorage.getItem('selectedPlan'));
 
-    document.getElementById('payBtn').addEventListener('click', () => {
-      const status = JSON.parse(localStorage.getItem('parkingStatus')) || {};
-      status[bayName] = 'unavailable';
-      localStorage.setItem('parkingStatus', JSON.stringify(status));
-
-      alert(`Payment successful! Bay ${bayName} is now occupied.`);
-      window.location.href = 'index.html';
-    });
-  </script> -->
-
-  <div class="verify-container">
-    <h1>VERIFY PAYMENT</h1>
-     <br><br>
-    <div id="plan-details"></div>
-
-    <br>
-    <p>Please confirm your payment details before proceeding.</p>
-    <br>
-
-    <button onclick="confirmPayment()">Confirm Payment</button>
-    <button onclick="cancelPayment()">Cancel</button>
-  </div>
-
-  <script>
-    const plan = JSON.parse(localStorage.getItem('selectedPlan'));
-
-    if (plan) {
-      document.getElementById('plan-details').innerHTML = `
+        if (plan) {
+            document.getElementById('plan-details').innerHTML = `
         <h3>${plan.name}</h3>
         <p>${plan.price}</p>
       `;
-    } else {
-      document.getElementById('plan-details').innerHTML = '<p>No plan selected.</p>';
-    }
+        } else {
+            document.getElementById('plan-details').innerHTML = '<p>No plan selected.</p>';
+        }
 
-    function confirmPayment() {
-      alert(`Payment confirmed for ${plan.name} (${plan.price}).`);
-      localStorage.removeItem('selectedPlan');
-      window.location.href = 'studentDashboard.html';
-    }
+        function confirmPayment() {
+            alert(`Payment confirmed for ${plan.name} (${plan.price}).`);
+            // DON'T remove the selectedPlan - we need it for notifications!
+            // Instead, mark the payment as completed and save purchase date
+            localStorage.setItem('paymentCompleted', 'true');
+            localStorage.setItem('purchaseDate', new Date().toISOString());
+            window.location.href = 'studentDashboard.html'; // Redirect to DASHBOARD
+        }
 
-    function cancelPayment() {
-      window.location.href = 'payments.html';
-    }
-  </script>
-
- 
+        function cancelPayment() {
+            window.location.href = 'payments.html';
+        }
+    </script>
 </body>
+
 </html>

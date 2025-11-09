@@ -1,77 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Notifications</title>
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="CSS/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notifications</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <a href="studentDashboard.html">
-      <button class="back-btn">←</button>
-      </a>
+    <button class="back-btn">←</button>
+</a>
+
 <body>
-  <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="profile">
-        <div class="avatar"><i class="fas fa-user-circle"></i></div>
-        <h3>STUDENT NAME</h3>
-        <p>STUDENT EMAIL</p>
-      </div>
-      <nav class="menu">
-        <a href="payments.html" class="menu-item"><i class="fas fa-credit-card"></i> Payments</a>
-        <a href="downloadInvoice.html" class="menu-item"><i class="fas fa-download"></i>Download Invoice</a>
-      </nav>
-      <div class="logout">
-        <a href="studentLogin.html" class="menu-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
-      </div>
-    </aside>
-    <!-- Main Content -->
-    <div id="notification-card" class="notification-card">
-      <!-- Dynamic plan info will appear here -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile">
+                <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                <h3>STUDENT NAME</h3>
+                <p>STUDENT EMAIL</p>
+            </div>
+            <nav class="menu">
+                <a href="payments.html" class="menu-item"><i class="fas fa-credit-card"></i> Payments</a>
+                <a href="downloadInvoice.html" class="menu-item"><i class="fas fa-download"></i>Download Invoice</a>
+            </nav>
+            <div class="logout">
+                <a href="studentLogin.html" class="menu-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <div id="notification-card" class="notification-card">
+            <!-- Dynamic plan info will appear here -->
+        </div>
     </div>
-  </div>
-  
 
-  <script>
-    // Retrieve the plan from localStorage
-    const plan = JSON.parse(localStorage.getItem("selectedPlan")) || { name: "No plan selected", price: "N/A" };
+    <script>
+        // Debug: Check what's actually in localStorage
+        console.log("LocalStorage selectedPlan:", localStorage.getItem("selectedPlan"));
 
-    const notificationCard = document.getElementById("notification-card");
+        // Retrieve the plan from localStorage with better error handling
+        let plan;
+        try {
+            const planData = localStorage.getItem("selectedPlan");
+            if (planData) {
+                plan = JSON.parse(planData);
+            } else {
+                plan = {
+                    name: "No plan selected",
+                    price: "N/A"
+                };
+            }
+        } catch (error) {
+            console.error("Error parsing plan data:", error);
+            plan = {
+                name: "No plan selected",
+                price: "N/A"
+            };
+        }
 
-    // Calculate expiry date based on plan type
-    const today = new Date();
-    let expiryDate;
+        console.log("Parsed plan:", plan);
 
-    if (plan.name == "Month-to-month") {
-      expiryDate = new Date(today.setMonth(today.getMonth() + 1));
-    } else if (plan.name === "Yearly") {
-      expiryDate = new Date(today.setFullYear(today.getFullYear() + 1));
-    } else if (plan.name === "Daily") {
-      expiryDate = new Date(today.setDate(today.getDate() + 1));
-    } else {
-      expiryDate = null;
-    }
+        const notificationCard = document.getElementById("notification-card");
 
-    // Format date
-    const formatDate = (date) => {
-      const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      return date ? date.toLocaleDateString('en-ZA', options) : 'N/A';
-    };
+        // Calculate expiry date based on plan type
+        const today = new Date();
+        let expiryDate;
 
-    // Display the card content dynamically
-    notificationCard.innerHTML = `
-      <div class="plan-card ${plan.name.toLowerCase().replaceAll(' ', '-')}">
+        if (plan.name === "Month-to-month") {
+            expiryDate = new Date(today.setMonth(today.getMonth() + 1));
+        } else if (plan.name === "Yearly") {
+            expiryDate = new Date(today.setFullYear(today.getFullYear() + 1));
+        } else if (plan.name === "Daily") {
+            expiryDate = new Date(today.setDate(today.getDate() + 1));
+        } else {
+            expiryDate = null;
+        }
+
+        // Format date
+        const formatDate = (date) => {
+            const options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+            return date ? date.toLocaleDateString('en-ZA', options) : 'N/A';
+        };
+
+        // Display the card content dynamically
+        if (plan.name !== "No plan selected") {
+            notificationCard.innerHTML = `
+      <div class="plan-card ${plan.name.toLowerCase().replace(/ /g, '-')}">
         <h2>${plan.name}</h2>
         <p><strong>Price:</strong> ${plan.price}</p>
         <p><strong>Expiry Date:</strong> ${formatDate(expiryDate)}</p>
+        <button class="cancel-btn" onclick="cancelPlan()">Cancel Plan</button>
       </div>
     `;
+        } else {
+            notificationCard.innerHTML = `
+      <div class="no-plan-card">
+        <h2>No Active Plan</h2>
+        <p>You don't have an active parking plan.</p>
+        <a href="payments.html" class="select-plan-btn">Select a Plan</a>
+      </div>
+    `;
+        }
 
-   
-  </script>
-  </div>
+        function cancelPlan() {
+            if (confirm("Are you sure you want to cancel your plan?")) {
+                localStorage.removeItem("selectedPlan");
+                alert("Plan cancelled successfully!");
+                location.reload();
+            }
+        }
+    </script>
+    </div>
 </body>
+
 </html>

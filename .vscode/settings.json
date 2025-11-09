@@ -1,0 +1,36 @@
+{
+    "liveServer.settings.multiRootWorkspaceName": "Parking_Lot_Management_System",
+    "sqltools.connections": [
+        {
+            "connectionTimeout": 15,
+            "mssqlOptions": {
+                "appName": "SQLTools",
+                "useUTC": true,
+                "encrypt": true,
+                "trustServerCertificate": false
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "MSSQL",
+            "name": "ParkingLotDBConnection",
+            "database": "ParkingLotDB",
+            "connectString": "Data Source=LAPTOP-OCOHBPDO\\SQLEXPRESS;Initial Catalog=ParkingLotDB;Integrated Security=True;Pooling=False;Connect Timeout=30;Trust Server Certificate=True;Application Name=vscode-mssql;Application Intent=ReadWrite"
+        },
+        {
+            "connectionTimeout": 15,
+            "mssqlOptions": {
+                "appName": "SQLTools",
+                "useUTC": true,
+                "encrypt": true,
+                "trustServerCertificate": false
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "MSSQL",
+            "name": "ParkingLotDBConnection",
+            "connectString": "Data Source=localhost\\SQLEXPRESS; Initial Catalog=ParkingLotDB; Integrated Security=True; Trust Server Certificate=True; Pooling=False; Connect Timeout=30; Application Name=vscode-mssql; Application Intent=ReadWrite;"
+        }
+    ]
+}
