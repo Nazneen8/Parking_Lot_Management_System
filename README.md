@@ -3,6 +3,8 @@
 A web-based **Parking Lot Management System** designed to streamline parking operations for students, staff, and administrators. 
 This system provides secure login, real-time parking bay availability, payment processing, and administrative management — all in one platform.
 
+youtube video: https://youtu.be/5ORoIcXEl_M
+
 ---
 The Parking Lot Management System is a digital solution developed for **Rosebank College** to manage parking efficiently.  
 It offers an intuitive web interface where users can:
