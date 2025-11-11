@@ -35,7 +35,7 @@ It offers an intuitive web interface where users can:
 - Manage users, parking bays, and notifications
 - View summary of parking allocations (Students / Staff / Guests)
 
-# InNSTALLATION AND SETUP
+# INSTALLATION AND SETUP
 
 1. **Clone the Repository**
    git clone https://github.com/Nazneen8/Parking_Lot_Management_System.git
