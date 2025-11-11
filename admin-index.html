@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+<!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/role.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="images/RC_logo.png" alt="Rosebank College">
+      </div>
+
+      <nav class="nav">
+        <a href="#"><i class="fa-solid fa-square-parking"></i> Sections <i class="fa-solid fa-chevron-right"></i></a>
+
+       <div class="dropdown">
+  <button class="dropdown-toggle">
+    <i class="fa-regular fa-circle-user"></i> Accounts <i class="fa-solid fa-chevron-right"></i>
+  </button>
+  <div class="dropdown-menu">
+    <a href="#"><i class="fa-solid fa-people-group"></i> Students</a>
+    <a href="#"><i class="fa-solid fa-user-tie"></i> Staff</a>
+    <a href="#"><i class="fa-solid fa-landmark"></i> Payments</a>
+  </div>
+</div>
+        <a href="#" class="settings-item"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+
+      <div class="logout">
+        <a href="index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+    <div class="search">
+      <input type="text" placeholder="Search...">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div>
+      <div class="notifications">
+        <i class="fa-solid fa-bell"></i>
+      </div>
+      <div class="profile-icon">
+        <i class="fa-solid fa-user"></i>
+      </div>
+    </div>
+    </div>
+     </main>
+
+    <div class="content">
+      <div class="cards">
+        <div class="card">
+          <div class="box">
+            <h1>90</h1>
+            <h3>Students</h3>
+          </div>
+          <div class="icons-case">
+            <i class="fa-solid fa-people-group fa-4x"></i>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <h1>50</h1>
+            <h3>Staff</h3>
+          </div>
+          <div class="icons-case">
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+        </div>
+      
+        <div class="card">
+          <div class="box">
+            <h1>10</h1>
+            <h3>Guests</h3>
+          </div>
+          <div class="icons-case">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-2">
+        <div class="recent-payments">
+          <div class="title">
+            <h2>Recent Payments</h2>
+            <a href="paymentAccounts.html" class="btn">View All</a>
+          </div>
+          <table>
+            <tr>
+              <th>AccountID</th>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Option</th>
+            </tr>
+            <tr>
+              <td>A001</td>
+              <td>Mu'Meena Harris</td>
+              <td>R700</td>
+              <td><a href="paymentAccounts.html" class="btn">View</a></td>
+            </tr>
+
+            <tr>
+              <td>A008</td>
+              <td>Nazneen Van der Fort</td>
+              <td>R200</td>
+              <td><a href="paymentAccounts.html" class="btn">View</a></td>
+            </tr>
+
+            <tr>
+              <td>A013</td>
+              <td>Sam Blue</td>
+              <td>R2000</td>
+              <td><a href="paymentAccounts.html" class="btn">View</a></td>
+            </tr>
+
+            <tr>
+              <td>A029</td>
+              <td>Jim Jones</td>
+              <td>R200</td>
+              <td><a href="paymentAccounts.html" class="btn">View</a></td>
+            </tr>
+
+            <tr>
+              <td>A002</td>
+              <td>Fazlin September</td>
+              <td>R2000</td>
+              <td><a href="paymentAccounts.html" class="btn">View</a></td>
+            </tr>
+
+            <tr>
+              <td>A087</td>
+              <td>Jack Frost</td>
+              <td>R20</td>
+              <td><a href="paymentAccounts.html" class="btn">View</a></td>
+            </tr>
+
+            <tr>
+              <td>A050</td>
+              <td>Craig Dune</td>
+              <td>R700</td>
+              <td><a href="paymentAccounts.html" class="btn">View</a></td>
+            </tr>
+
+            <tr>
+              <td>A017</td>
+              <td>Jamie Davis</td>
+              <td>R700</td>
+              <td><a href="paymentAccounts.html" class="btn">View</a></td>
+            </tr>
+          </table>
+        </div>
+          <div class="new-accounts">
+            <div class="title">
+            <h2>New Accounts</h2>
+            <a href="" class="btn">View All</a>
+          </div>
+          <table>
+            <tr>
+              <th>Profile</th>
+              <th>Name</th>
+              <th>Option</th>
+            </tr>
+            <tr>
+              <td style="text-align: center;"><i class="fa-solid fa-user"></i></td>
+              <td>Scott Lane</td>
+              <td style="text-align: center;"><i class="fa-solid fa-circle-info"></i></td>
+            </tr>
+          </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+  
+
+
+
+  <script>
+  document.querySelector('.dropdown-toggle').addEventListener('click', function () {
+    document.querySelector('.dropdown-menu').classList.toggle('show');
+  });
+</script>
+
+<style>
+  .dropdown-menu.show {
+    display: flex;
+  }
+</style>
+
+</body>
+</html>

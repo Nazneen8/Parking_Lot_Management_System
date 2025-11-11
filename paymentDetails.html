@@ -5,23 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Payment Details</title>
   <link rel="stylesheet" href="CSS/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
   <div class="paymentDetails-container">
     <header>
+
       <a href="payments.html">
-      <button class="back-btn">←</button></a>
-      <h1>PAYMENT</h1>
-      <a href="studentDashboard.html">
-      <button class="home-btn">🏠</button>
-      </a>
+      <i class="fa-solid fa-arrow-left"></i></a>
+        <h1>PAYMENT</h1>
+      <a href="studentDashboard.html"><i class="fa-solid fa-house"></i></a>
     </header>
 
     <p class="subtitle">Enter your banking details below:</p>
 
     <div class="secure-banner">
-      <span class="lock">🔒</span>
+      <i class="fa-solid fa-lock"></i>
       <p>Your information is safe and secure</p>
     </div>
 
@@ -34,7 +36,7 @@
 
       <label for="card-number">Card number</label>
       <div class="card-input">
-        <span class="card-icon">💳</span>
+         <i class="fa-solid fa-credit-card"></i>
         <input type="text" id="card-number" placeholder="1234 5678 9102 3456" required>
       </div>
 

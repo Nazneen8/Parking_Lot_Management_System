@@ -14,8 +14,8 @@
     <aside class="sidebar">
       <div class="profile">
         <div class="avatar"><i class="fas fa-user-circle"></i></div>
-        <h3>STUDENT NAME</h3>
-        <p>STUDENT EMAIL</p>
+        <h3>Jamie Davis</h3>
+        <p>ST10456789@rcconnect.edu.za</p>
       </div>
       <nav class="menu">
         <a href="notifications.html" class="menu-item"><i class="fas fa-bell"></i> Notifications</a>
@@ -66,51 +66,11 @@
     <a href="payments.html"><button class="parking-space" data-status="grey">B9</button></a>
     <a href="payments.html"><button class="parking-space" data-status="grey">B10</button></a>
   </div>
-  
 
-  <!-- JAVASCRIPT TO ALLOW BUTTONS TO CHANGE  COLOUR ONCE SELECTED -->
-   <!--- <script>
-    const apiUrl = 'http://localhost:3000/spaces';
-
-    async function loadSpaces() {
-      const res = await fetch(apiUrl);
-      const spaces = await res.json();
-
-      const lot = document.getElementById('parkingLot');
-      lot.innerHTML = '';
-
-      spaces.forEach(space => {
-        const btn = document.createElement('button');
-        btn.textContent = space.SpaceName;
-        btn.className = 'parking-space';
-        btn.dataset.status = space.Status;
-
-        btn.addEventListener('click', async () => {
-          let newStatus;
-          if (space.Status === 'grey') newStatus = 'red';
-          else if (space.Status === 'red') newStatus = 'green';
-          else newStatus = 'grey';
-
-          space.Status = newStatus;
-          btn.dataset.status = newStatus;
-
-          await fetch(`${apiUrl}/${space.SpaceID}`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ status: newStatus })
-          });
-        });
-
-        lot.appendChild(btn);
-      });
-    }
-
-    loadSpaces();
-  </script>  -->
 
     </main>
   </div>
 
-  <script src="script.js"></script>
+  <script src="Javascript/script.js"></script>
 </body>
 </html>

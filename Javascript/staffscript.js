@@ -1,12 +1,10 @@
-//Changes colour of parking bay without payment being made
-
 document.addEventListener("DOMContentLoaded", () => {
   const spaces = document.querySelectorAll(".parking-space");
   const occupiedCount = document.querySelector(".occupied .count");
   const availableCount = document.querySelector(".available .count");
 
-  // Load saved status from localStorage
-  const savedStatus = JSON.parse(localStorage.getItem("parkingStatus")) || {};
+  // Load saved status from localStorage for staff
+  const savedStatus = JSON.parse(localStorage.getItem("staffParkingStatus")) || {};
 
   spaces.forEach((btn) => {
     const id = btn.textContent;
@@ -26,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.dataset.status = next;
       btn.style.backgroundColor = getColor(next);
       savedStatus[id] = next;
-      localStorage.setItem("parkingStatus", JSON.stringify(savedStatus));
+      localStorage.setItem("staffParkingStatus", JSON.stringify(savedStatus));
       updateCounts();
     });
   });
@@ -48,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial update
   updateCounts();
 });
-
 
 
 

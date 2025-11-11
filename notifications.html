@@ -9,9 +9,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
-<a href="studentDashboard.html">
-    <button class="back-btn">←</button>
-</a>
 
 <body>
     <div class="container">
@@ -30,6 +27,7 @@
                 <a href="studentLogin.html" class="menu-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
         </aside>
+        
         <!-- Main Content -->
         <div id="notification-card" class="notification-card">
             <!-- Dynamic plan info will appear here -->
@@ -70,6 +68,8 @@
 
         if (plan.name === "Month-to-month") {
             expiryDate = new Date(today.setMonth(today.getMonth() + 1));
+        }else if (plan.name === "Semester"){
+           expiryDate = new Date(today.setMonth(today.getMonth() + 4));
         } else if (plan.name === "Yearly") {
             expiryDate = new Date(today.setFullYear(today.getFullYear() + 1));
         } else if (plan.name === "Daily") {

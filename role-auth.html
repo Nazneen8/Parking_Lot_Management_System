@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/role.css">
+    <title>Role Based Authentication</title>
+</head>
+<body class="role-body">
+    <div class="app">
+        <h1>Role-Based Authentication</h1>
+
+        <!-- Login Card -->
+        <div id="login-section" class="card active">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="login-button">Login</button>
+        </div>
+
+        <!-- User Dashboard -->
+        <div id="user-section" class="card">
+            <h2>User Dashboard</h2>
+            <p>Welcome, User!</p>
+            <button id="logout-button">Logout</button>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="admin-section" class="card">
+            <h2>Admin Dashboard</h2>
+            <p>Welcome, Admin!</p>
+            <button id="logout-button">Logout</button>
+        </div>
+    </div>
+
+    <script src="Javascript/auth.js"></script>
+</body>
+</html>

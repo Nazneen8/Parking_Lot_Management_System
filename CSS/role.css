@@ -1,0 +1,452 @@
+/* ===== Page Layout ===== */
+.role-body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, white);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* ===== Main Container ===== */
+.app {
+    text-align: center;
+}
+
+/* ===== Card Style ===== */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px 0;
+    padding: 40px 30px;
+    width: 350px;
+    margin: 0 auto;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.card.active {
+    display: block;
+}
+
+/* ===== Headings ===== */
+h1 {
+    color: red;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+h2 {
+    color: red;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+/* ===== Inputs ===== */
+input[type="text"],
+input[type="password"] {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: red;
+    box-shadow: 0 0 5px rgba(75, 89, 247, 0.4);
+}
+
+/* ===== Buttons ===== */
+button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background: red;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #3646c4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(54, 70, 196, 0.3);
+}
+
+/* ===== Paragraphs ===== */
+p {
+    color: #444;
+    font-size: 15px;
+    margin: 10px 0 20px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 480px) {
+    .app {
+        width: 90%;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.1em;
+    }
+}
+/* ============================================================================================================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Layout container */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar styling */
+.sidebar {
+  background-color: #000;
+  color: #fff;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+/* Logo */
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo img {
+  width: 150px;
+  border-bottom: 2px solid #222;
+}
+
+/* Navigation links */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 30px;
+  padding-bottom: 155px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ff5757;
+  transform: translateX(5px);
+}
+.nav .nav-item{
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.3s;
+  padding-left: 35px;
+
+}
+
+.nav .settings-item{
+  padding-top: 125px;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropdown-toggle:hover {
+  color: #ff5757;
+  transform: translateX(5px);
+}
+
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #222;
+  padding: 10px 0;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+.dropdown-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.3s;
+}
+
+.dropdown-menu a:hover {
+  color: #ff5757;
+  background-color: #333;
+}
+.fa-chevron-right {
+  font-size: 10px;
+}
+
+/* Logout section */
+.logout {
+  padding-left: 30px;
+}
+
+.logout a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: 0.3s;
+}
+
+.logout a:hover {
+  color: #ff5757;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  position: relative;
+}
+
+/* Profile icon in top right */
+.profile-icon {
+  position: absolute;
+  top: 20px;
+  right: 50px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+.notifications{
+    position: absolute;
+  top: 20px;
+  right: 250px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+
+}
+
+.main-content{
+    position: absolute;
+    right: 0;
+    width: 80vh;
+    height: 100vh;
+}
+
+.main-content .header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 84vw;
+    height: 10vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.main-content .header .search{
+    flex: 3;
+    display: flex;
+    justify-content: center;
+}
+
+.main-content .header .search input[type=text]{
+   border: none;
+    background: #f1f1f1;
+    padding: 10px;
+    width: 30%;
+}
+
+.main-content .header .search i{
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-magnifying-glass{
+    width: 30px;
+    height: 30px;
+}
+
+.container .content{
+    position: relative;
+    margin-top: 10vh;
+    min-height: 90vh;
+}
+.container .content .cards{
+    padding: 30px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container .content .cards .card{
+    width: 250px;
+    height: 150px;
+    background: #f1f1f1;
+    margin: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0;
+}
+.btn{
+    color: white;
+    background: rgb(245, 101, 101);
+    padding: 5px 10px;
+    text-align: center;
+}
+.btn:hover{
+    color: rgb(245, 101, 101);;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid #f05462;
+}
+
+.card .icons-case i {
+  font-size: 50px;
+  background-color: #f1f1f1;
+  color: rgb(245, 101, 101);
+}
+.card .h3{
+    background-color: #f1f1f1;
+    color: #333;
+}
+
+.container .content .content-2{
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.container .content .content-2 .recent-payments{
+    min-height: 56vh;
+    flex: 5;
+    background: #f1f1f1;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.container .content .content-2 .new-accounts{
+    min-height: 56vh;
+    flex: 2;
+    background: #f1f1f1;
+    margin: 0 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    border-bottom: 2px solid #c2c1c1;
+}
+.table{
+    padding: 10px;
+}
+th,td{
+    text-align: left;
+    padding: 8px;
+}
+
+.fa-user{
+   align-items: center;
+   display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
