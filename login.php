@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Pre-approved demo credentials 
     $valid_logins = [
         'ST10456789@rcconnect.edu.za' => 'Password123!', // CHANGED FROM 'Pass123!'
-        'admin@example.com' => 'Admin123!', 
+        'admin@rosebankcollege.co.za.com' => 'Admin123!', 
         'test@example.com' => 'Test123!',
         'demo@example.com' => 'Demo123!'
     ];

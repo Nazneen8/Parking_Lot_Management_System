@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student View</title>
+    <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/role.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+     <div class="container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="images/RC_logo.png" alt="Rosebank College">
+      </div>
+
+      <nav class="nav">
+         <a href="admin-index.html" class="menu-item"><i class="fa-solid fa-house-chimney"></i>Dashboard</a>
+        <a href="paymentAccounts.html"><i class="fa-solid fa-landmark"></i> Payments</a>
+
+       <div class="dropdown">
+  <button class="dropdown-toggle">
+    <i class="fa-regular fa-circle-user"></i> Sections <i class="fa-solid fa-chevron-right"></i>
+  </button>
+  <div class="dropdown-menu">
+    <a href="studentDashboardView.html"><i class="fa-solid fa-people-group"></i> Students</a>
+    <a href="staffDashboardView.html"><i class="fa-solid fa-user-tie"></i> Staff</a>
+  </div>
+</div>
+        <a href="adminSettings.html" class="settings-item"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+
+      <div class="logout">
+        <a href="index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+
+    <br><br>
+    <!-- Main Content -->
+    <main class="Sv-main-content">
+      <div class="status">
+        <div class="occupied">
+          <br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br><h4>OCCUPIED</h4>
+          <span class="count">0</span>
+        </div>
+        <div class="available">
+          <br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br><h4>AVAILABLE</h4>
+          <span class="count green">20</span>
+        </div>
+      </div>
+      <br><br>
+     <!--ADD BUTTONS INDICATING PARKING-->
+     <div class="parking-lot">
+    <a href=""><button class="parking-space" data-status="grey">A1</button></a>
+    <a href=""><button class="parking-space" data-status="grey">A2</button></a>
+    <a href=""><button class="parking-space" data-status="grey">A3</button></a>
+    <a href=""><button class="parking-space" data-status="grey">A4</button></a>
+    <a href=""><button class="parking-space" data-status="grey">A5</button></a>
+    <a href=""><button class="parking-space" data-status="grey">A6</button></a>
+    <a href=""><button class="parking-space" data-status="grey">A7</button></a>
+    <a href=""><button class="parking-space" data-status="grey">A8</button></a>
+    <a href=""><button class="parking-space" data-status="grey">A9</button></a>
+    <a href=""><button class="parking-space" data-status="grey">A10</button></a>
+  </div>
+<br><br>
+    <div class="parking-lot">
+    <a href=""><button class="parking-space" data-status="grey">B1</button></a>
+    <a href=""><button class="parking-space" data-status="grey">B2</button></a>
+    <a href=""><button class="parking-space" data-status="grey">B3</button></a>
+    <a href=""><button class="parking-space" data-status="grey">B4</button></a>
+    <a href=""><button class="parking-space" data-status="grey">B5</button></a>
+    <a href=""><button class="parking-space" data-status="grey">B6</button></a>
+    <a href=""><button class="parking-space" data-status="grey">B7</button></a>
+    <a href=""><button class="parking-space" data-status="grey">B8</button></a>
+    <a href=""><button class="parking-space" data-status="grey">B9</button></a>
+    <a href=""><button class="parking-space" data-status="grey">B10</button></a>
+  </div>
+  <br><br>
+    <div class="parking-lot">
+    <a href=""><button class="parking-space" data-status="grey">C1</button></a>
+    <a href=""><button class="parking-space" data-status="grey">C2</button></a>
+    <a href=""><button class="parking-space" data-status="grey">C3</button></a>
+    <a href=""><button class="parking-space" data-status="grey">C4</button></a>
+    <a href=""><button class="parking-space" data-status="grey">C5</button></a>
+    <a href=""><button class="parking-space" data-status="grey">C6</button></a>
+    <a href=""><button class="parking-space" data-status="grey">C7</button></a>
+    <a href=""><button class="parking-space" data-status="grey">C8</button></a>
+    <a href=""><button class="parking-space" data-status="grey">C9</button></a>
+    <a href=""><button class="parking-space" data-status="grey">C10</button></a>
+  </div>
+  <br><br>
+    <div class="parking-lot">
+    <a href=""><button class="parking-space" data-status="grey">D1</button></a>
+    <a href=""><button class="parking-space" data-status="grey">D2</button></a>
+    <a href=""><button class="parking-space" data-status="grey">D3</button></a>
+    <a href=""><button class="parking-space" data-status="grey">D4</button></a>
+    <a href=""><button class="parking-space" data-status="grey">D5</button></a>
+    <a href=""><button class="parking-space" data-status="grey">D6</button></a>
+    <a href=""><button class="parking-space" data-status="grey">D7</button></a>
+    <a href=""><button class="parking-space" data-status="grey">D8</button></a>
+    <a href=""><button class="parking-space" data-status="grey">D9</button></a>
+    <a href=""><button class="parking-space" data-status="grey">D10</button></a>
+  </div>
+    </main>
+  </div>
+
+  <script>
+  document.querySelector('.dropdown-toggle').addEventListener('click', function () {
+    document.querySelector('.dropdown-menu').classList.toggle('show');
+  });
+</script>
+
+<style>
+  .dropdown-menu.show {
+    display: flex;
+  }
+</style>
+
+
+  <script src="Javascript/script.js"></script>
+</body>
+</html>

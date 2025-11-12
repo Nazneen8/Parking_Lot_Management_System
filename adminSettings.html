@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings</title>
+    <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/role.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" 
+  integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+     <div class="container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="images/RC_logo.png" alt="Rosebank College">
+      </div>
+
+      <nav class="nav">
+         <a href="admin-index.html" class="menu-item"><i class="fa-solid fa-house-chimney"></i>Dashboard</a>
+        <a href="paymentAccounts.html"><i class="fa-solid fa-landmark"></i> Payments</a>
+
+       <div class="dropdown">
+  <button class="dropdown-toggle">
+    <i class="fa-regular fa-circle-user"></i> Sections <i class="fa-solid fa-chevron-right"></i>
+  </button>
+  <div class="dropdown-menu">
+    <a href="studentDashboardView.html"><i class="fa-solid fa-people-group"></i> Students</a>
+    <a href="staffDashboardView.html"><i class="fa-solid fa-user-tie"></i> Staff</a>
+  </div>
+</div>
+        <a href="adminSettings.html" class="settings-item"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+
+      <div class="logout">
+        <a href="index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+        <main class="main-content">
+            <div class="settings-header">
+                <h1><i class="fas fa-cog"></i> Settings</h1>
+                <p>Manage your account preferences and application settings</p>
+            </div>
+
+            <!-- Theme Switcher in Top Right -->
+            <div class="theme-switcher-header">
+                <button class="theme-btn" onclick="toggleTheme()">
+          <span id="theme-icon">🌙</span> 
+          <span id="theme-text">Dark Mode</span>
+        </button>
+            </div>
+
+            <div class="settings-container">
+                <!-- Notification Settings -->
+                <div class="settings-card">
+                    <h3><i class="fas fa-bell"></i> Notifications</h3>
+                    <div class="setting-item">
+                        <label class="switch">
+              <input type="checkbox" id="emailNotifications" checked>
+              <span class="slider"></span>
+            </label>
+                        <span>Email Notifications</span>
+                    </div>
+                    <div class="setting-item">
+                        <label class="switch">
+              <input type="checkbox" id="smsNotifications">
+              <span class="slider"></span>
+            </label>
+                        <span>SMS Alerts</span>
+                    </div>
+                    <div class="setting-item">
+                        <label class="switch">
+              <input type="checkbox" id="parkingAlerts" checked>
+              <span class="slider"></span>
+            </label>
+                        <span>Parking Availability Alerts</span>
+                    </div>
+                </div>
+
+                <!-- Vehicle Information -->
+                <div class="settings-card">
+                    <h3><i class="fas fa-car"></i> Vehicle Information</h3>
+                    <div class="form-group">
+                        <label>License Plate:</label>
+                        <input type="text" id="licensePlate" placeholder="CA 123-456" value="CA 123-456">
+                    </div>
+                    <div class="form-group">
+                        <label>Vehicle Make & Model:</label>
+                        <input type="text" id="vehicleModel" placeholder="Toyota Corolla" value="Toyota Corolla">
+                    </div>
+                    <div class="form-group">
+                        <label>Vehicle Color:</label>
+                        <input type="text" id="vehicleColor" placeholder="Blue" value="Blue">
+                    </div>
+                    <button class="save-btn" onclick="updateVehicleInfo()">Update Vehicle Info</button>
+
+                    <!-- Success Message (hidden by default) -->
+                    <div id="vehicleSuccessMessage" class="success-message" style="display: none;">
+                        <i class="fas fa-check-circle"></i> Vehicle information updated successfully!
+                    </div>
+                </div>
+
+                <!-- Account Settings -->
+                <!-- Account Settings - DEMO FRIENDLY -->
+                <div class="settings-card">
+                    <h3><i class="fas fa-user-shield"></i> Account Security</h3>
+
+                    <!-- Change Password - Looks Real -->
+                    <div class="security-form" id="passwordForm" style="display: none;">
+                        <h4>Change Password</h4>
+                        <div class="form-group">
+                            <label>Current Password:</label>
+                            <input type="password" id="currentPassword" placeholder="Enter current password">
+                        </div>
+                        <div class="form-group">
+                            <label>New Password:</label>
+                            <input type="password" id="newPassword" placeholder="Enter new password">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm New Password:</label>
+                            <input type="password" id="confirmPassword" placeholder="Confirm new password">
+                        </div>
+                        <div class="form-actions">
+                            <button class="save-btn" onclick="submitPasswordChange()">Update Password</button>
+                            <button class="cancel-btn" onclick="closePasswordForm()">Cancel</button>
+                        </div>
+                        <div id="passwordSuccessMessage" class="success-message" style="display: none;">
+                            <i class="fas fa-check-circle"></i> Password updated successfully!
+                        </div>
+                    </div>
+
+                    <!-- Update Email - Looks Real -->
+                    <div class="security-form" id="emailForm" style="display: none;">
+                        <h4>Update Email Address</h4>
+                        <div class="form-group">
+                            <label>Current Email:</label>
+                            <input type="email" value="ST10456789@rcconnect.edu.za" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>New Email:</label>
+                            <input type="email" id="newEmail" placeholder="Enter new email address">
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password:</label>
+                            <input type="password" id="emailPassword" placeholder="Enter your password">
+                        </div>
+                        <div class="form-actions">
+                            <button class="save-btn" onclick="submitEmailChange()">Update Email</button>
+                            <button class="cancel-btn" onclick="closeEmailForm()">Cancel</button>
+                        </div>
+                        <div id="emailSuccessMessage" class="success-message" style="display: none;">
+                            <i class="fas fa-check-circle"></i> Email updated successfully! Verification sent to new address.
+                        </div>
+                    </div>
+
+                    <!-- Two-Factor Authentication - Looks Real -->
+                    <div class="security-form" id="twoFactorForm" style="display: none;">
+                        <h4>Two-Factor Authentication</h4>
+                        <div class="form-group">
+                            <label>Enable 2FA for extra security:</label>
+                            <div class="toggle-container">
+                                <label class="switch">
+          <input type="checkbox" id="twoFactorToggle" onchange="toggleTwoFactor()">
+          <span class="slider"></span>
+        </label>
+                                <span id="twoFactorStatus">Disabled</span>
+                            </div>
+                        </div>
+
+                        <div id="twoFactorSetup" style="display: none;">
+                            <p>Scan the QR code with your authenticator app:</p>
+                            <div class="qr-code-placeholder">
+                                <div class="qr-simulator">
+                                    <div class="qr-lines"></div>
+                                    <div class="qr-text">QR Code Simulator</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Enter 6-digit code:</label>
+                                <input type="text" id="authCode" placeholder="000000" maxlength="6">
+                            </div>
+                            <button class="save-btn" onclick="enableTwoFactor()">Enable 2FA</button>
+                        </div>
+
+                        <div id="twoFactorSuccessMessage" class="success-message" style="display: none;">
+                            <i class="fas fa-check-circle"></i> Two-Factor Authentication enabled successfully!
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <button class="action-btn" onclick="showPasswordForm()">
+    <i class="fas fa-key"></i> Change Password
+  </button>
+                    <button class="action-btn" onclick="showEmailForm()">
+    <i class="fas fa-envelope"></i> Update Email Address
+  </button>
+                    <button class="action-btn" onclick="showTwoFactorForm()">
+    <i class="fas fa-mobile-alt"></i> Two-Factor Authentication
+  </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Theme functionality
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            const themeText = document.getElementById('theme-text');
+
+            if (body.classList.contains('dark-theme')) {
+                // Switch to Light Mode
+                body.classList.remove('dark-theme');
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark Mode';
+                localStorage.setItem('theme', 'light');
+                showToast('Light mode activated');
+            } else {
+                // Switch to Dark Mode
+                body.classList.add('dark-theme');
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light Mode';
+                localStorage.setItem('theme', 'dark');
+                showToast('Dark mode activated');
+            }
+        }
+
+        // Check saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+                document.getElementById('theme-icon').textContent = '☀️';
+                document.getElementById('theme-text').textContent = 'Light Mode';
+            }
+        });
+
+        // Demo functions for buttons
+        function changePassword() {
+            alert('Password change feature would open here in a real application');
+        }
+
+        function updateEmail() {
+            alert('Email update feature would open here');
+        }
+
+        function contactSupport() {
+            alert('Redirecting to support contact form...');
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            toast.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 5px;
+        z-index: 1000;
+      `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3000);
+        }
+
+        // Save settings when toggles are changed
+        document.querySelectorAll('.switch input').forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                const settingName = this.id;
+                const value = this.checked;
+                localStorage.setItem(settingName, value);
+                showToast('Setting saved');
+            });
+        });
+
+        // Load saved toggle states
+        document.querySelectorAll('.switch input').forEach(toggle => {
+            const savedValue = localStorage.getItem(toggle.id);
+            if (savedValue !== null) {
+                toggle.checked = savedValue === 'true';
+            }
+        });
+
+        function updateVehicleInfo() {
+            const licensePlate = document.getElementById('licensePlate').value;
+            const vehicleModel = document.getElementById('vehicleModel').value;
+            const vehicleColor = document.getElementById('vehicleColor').value;
+
+            // Show loading state
+            const saveBtn = document.querySelector('.save-btn');
+            const originalText = saveBtn.innerHTML;
+            saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
+            saveBtn.disabled = true;
+
+            // Simulate API call/processing delay
+            setTimeout(() => {
+                // Show success message
+                const successMessage = document.getElementById('vehicleSuccessMessage');
+                successMessage.style.display = 'flex';
+
+                // Restore button
+                saveBtn.innerHTML = originalText;
+                saveBtn.disabled = false;
+
+                // Hide success message after 3 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+
+                // For extra realism, you can save to localStorage
+                localStorage.setItem('vehicleLicense', licensePlate);
+                localStorage.setItem('vehicleModel', vehicleModel);
+                localStorage.setItem('vehicleColor', vehicleColor);
+
+            }, 1000); // 1 second delay to simulate processing
+        }
+
+        // Account Security Functions
+        function showPasswordForm() {
+            document.getElementById('passwordForm').style.display = 'block';
+            document.getElementById('emailForm').style.display = 'none';
+            document.getElementById('twoFactorForm').style.display = 'none';
+            hideAllActionButtons();
+        }
+
+        function showEmailForm() {
+            document.getElementById('emailForm').style.display = 'block';
+            document.getElementById('passwordForm').style.display = 'none';
+            document.getElementById('twoFactorForm').style.display = 'none';
+            hideAllActionButtons();
+        }
+
+        function showTwoFactorForm() {
+            document.getElementById('twoFactorForm').style.display = 'block';
+            document.getElementById('passwordForm').style.display = 'none';
+            document.getElementById('emailForm').style.display = 'none';
+            hideAllActionButtons();
+        }
+
+        function hideAllActionButtons() {
+            document.querySelectorAll('.action-btn').forEach(btn => {
+                btn.style.display = 'none';
+            });
+        }
+
+        function showAllActionButtons() {
+            document.querySelectorAll('.action-btn').forEach(btn => {
+                btn.style.display = 'flex';
+            });
+        }
+
+        function closePasswordForm() {
+            document.getElementById('passwordForm').style.display = 'none';
+            // Clear form fields
+            document.getElementById('currentPassword').value = '';
+            document.getElementById('newPassword').value = '';
+            document.getElementById('confirmPassword').value = '';
+            document.getElementById('passwordSuccessMessage').style.display = 'none';
+            showAllActionButtons();
+        }
+
+        function closeEmailForm() {
+            document.getElementById('emailForm').style.display = 'none';
+            document.getElementById('newEmail').value = '';
+            document.getElementById('emailPassword').value = '';
+            document.getElementById('emailSuccessMessage').style.display = 'none';
+            showAllActionButtons();
+        }
+
+        function closeTwoFactorForm() {
+            document.getElementById('twoFactorForm').style.display = 'none';
+            document.getElementById('twoFactorSuccessMessage').style.display = 'none';
+            showAllActionButtons();
+        }
+
+        // Password Change Simulation
+        function submitPasswordChange() {
+            const currentPass = document.getElementById('currentPassword').value;
+            const newPass = document.getElementById('newPassword').value;
+            const confirmPass = document.getElementById('confirmPassword').value;
+
+            // Basic validation
+            if (!currentPass || !newPass || !confirmPass) {
+                showError('passwordForm', 'Please fill in all password fields');
+                return;
+            }
+
+            if (newPass !== confirmPass) {
+                showError('passwordForm', 'New passwords do not match');
+                return;
+            }
+
+            if (newPass.length < 8) {
+                showError('passwordForm', 'Password must be at least 8 characters long');
+                return;
+            }
+
+            // Show loading state
+            const saveBtn = document.querySelector('#passwordForm .save-btn');
+            const originalText = saveBtn.innerHTML;
+            saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
+            saveBtn.disabled = true;
+
+            // Simulate API call/processing delay
+            setTimeout(() => {
+                // Show success message
+                const successMessage = document.getElementById('passwordSuccessMessage');
+                successMessage.style.display = 'flex';
+
+                // Restore button
+                saveBtn.innerHTML = originalText;
+                saveBtn.disabled = false;
+
+                // Clear form fields
+                document.getElementById('currentPassword').value = '';
+                document.getElementById('newPassword').value = '';
+                document.getElementById('confirmPassword').value = '';
+
+                // Hide success message after 3 seconds and close form
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                    closePasswordForm();
+                }, 3000);
+
+            }, 1500); // 1.5 second delay
+        }
+
+        // Email Change Simulation
+        function submitEmailChange() {
+            const newEmail = document.getElementById('newEmail').value;
+            const password = document.getElementById('emailPassword').value;
+
+            // Basic validation
+            if (!newEmail || !password) {
+                showError('emailForm', 'Please fill in all fields');
+                return;
+            }
+
+            if (!isValidEmail(newEmail)) {
+                showError('emailForm', 'Please enter a valid email address');
+                return;
+            }
+
+            // Show loading state
+            const saveBtn = document.querySelector('#emailForm .save-btn');
+            const originalText = saveBtn.innerHTML;
+            saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
+            saveBtn.disabled = true;
+
+            // Simulate API call/processing delay
+            setTimeout(() => {
+                // Show success message
+                const successMessage = document.getElementById('emailSuccessMessage');
+                successMessage.style.display = 'flex';
+
+                // Restore button
+                saveBtn.innerHTML = originalText;
+                saveBtn.disabled = false;
+
+                // Clear form fields
+                document.getElementById('newEmail').value = '';
+                document.getElementById('emailPassword').value = '';
+
+                // Hide success message after 3 seconds and close form
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                    closeEmailForm();
+                }, 3000);
+
+            }, 1500);
+        }
+
+        // Two-Factor Authentication Simulation
+        function toggleTwoFactor() {
+            const toggle = document.getElementById('twoFactorToggle');
+            const setupSection = document.getElementById('twoFactorSetup');
+            const status = document.getElementById('twoFactorStatus');
+
+            if (toggle.checked) {
+                setupSection.style.display = 'block';
+                status.textContent = 'Setting up...';
+            } else {
+                setupSection.style.display = 'none';
+                status.textContent = 'Disabled';
+                document.getElementById('twoFactorSuccessMessage').style.display = 'none';
+            }
+        }
+
+        function enableTwoFactor() {
+            const authCode = document.getElementById('authCode').value;
+
+            if (!authCode || authCode.length !== 6) {
+                showError('twoFactorForm', 'Please enter a valid 6-digit code');
+                return;
+            }
+
+            // Show loading state
+            const saveBtn = document.querySelector('#twoFactorForm .save-btn');
+            const originalText = saveBtn.innerHTML;
+            saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Verifying...';
+            saveBtn.disabled = true;
+
+            // Simulate API call/processing delay
+            setTimeout(() => {
+                // Show success message
+                const successMessage = document.getElementById('twoFactorSuccessMessage');
+                successMessage.style.display = 'flex';
+
+                // Restore button
+                saveBtn.innerHTML = 'Enable 2FA';
+                saveBtn.disabled = false;
+
+                // Update status
+                document.getElementById('twoFactorStatus').textContent = 'Enabled';
+                document.getElementById('twoFactorSetup').style.display = 'none';
+
+                // Hide success message after 3 seconds and close form
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                    closeTwoFactorForm();
+                }, 3000);
+
+            }, 1500);
+        }
+
+        // Helper functions
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function showError(formId, message) {
+            // Remove any existing error messages in this form
+            const existingError = document.querySelector(`#${formId} .error-message`);
+            if (existingError) {
+                existingError.remove();
+            }
+
+            // Create error message
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
+
+            // Insert after the form actions
+            const formActions = document.querySelector(`#${formId} .form-actions`);
+            formActions.parentNode.insertBefore(errorDiv, formActions.nextSibling);
+
+            // Remove error after 3 seconds
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

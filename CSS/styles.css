@@ -880,7 +880,7 @@ button:hover {
     font-size: 20px;
     color: #000;
 }
-
+/* ==============================================================================================================*/
 
 /* Theme Switcher Button */
 
@@ -1265,7 +1265,8 @@ input:checked+.slider:before {
 .qr-lines {
     width: 80%;
     height: 80%;
-    background: linear-gradient(90deg, transparent 49%, #000 49%, #000 51%, transparent 51%), linear-gradient(transparent 49%, #000 49%, #000 51%, transparent 51%);
+    background: linear-gradient(90deg, transparent 49%, #000 49%, #000 51%, transparent 51%), 
+    linear-gradient(transparent 49%, #000 49%, #000 51%, transparent 51%);
     background-size: 20px 20px;
     opacity: 0.3;
 }
