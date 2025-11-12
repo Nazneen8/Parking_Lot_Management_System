@@ -355,21 +355,23 @@ body {
     color: limegreen;
 }
 
+
 /* Profile icon in top right */
+
 .profile-icon {
-  position: absolute;
-  top: 20px;
-  right: 50px;
-  background-color: black;
-  color: #fff;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    background-color: black;
+    color: #fff;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 .buttons {
@@ -404,7 +406,7 @@ body {
     transition: background-color 0.3s;
 }
 
-.fa-house{
+.fa-house {
     font-size: 20px;
     color: #000;
 }
@@ -520,10 +522,12 @@ header h1 {
     width: 130px;
     margin-top: 30px;
 }
-.fa-arrow-left{
+
+.fa-arrow-left {
     font-size: 20px;
     color: #000;
 }
+
 
 /********************************************************************************************************************************/
 
@@ -565,11 +569,10 @@ header h1 {
     font-weight: 700;
 }
 
-.fa-lock{
+.fa-lock {
     font-size: 20px;
     color: #f0b308;
 }
-
 
 .subtitle {
     text-align: center;
@@ -628,11 +631,10 @@ header h1 {
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: 10px;
-   
 }
 
 .card-input .fa-credit-card {
-   margin-left: 1rem;
+    margin-left: 1rem;
     font-size: 20px;
     color: #444;
 }
@@ -670,11 +672,13 @@ header h1 {
 .confirm-btn:hover {
     background-color: #e00000;
 }
-.fa-house{
+
+.fa-house {
     font-size: 20px;
     color: #000;
 }
-.fa-arrow-left{
+
+.fa-arrow-left {
     font-size: 20px;
     color: #000;
 }
@@ -726,11 +730,12 @@ button:hover {
     background: #e40303;
 }
 
-.fa-house{
+.fa-house {
     font-size: 20px;
     color: #000;
 }
-.fa-arrow-left{
+
+.fa-arrow-left {
     font-size: 20px;
     color: #000;
 }
@@ -871,7 +876,424 @@ button:hover {
     width: 150px;
 }
 
-.fa-house{
+.fa-house {
     font-size: 20px;
     color: #000;
+}
+
+
+/* Theme Switcher Button */
+
+.theme-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+
+
+/* Settings Page Styles */
+
+.settings-header {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings-header h1 {
+    color: #333;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings-header p {
+    color: #666;
+    font-size: 16px;
+}
+
+
+/* Theme Switcher in Header */
+
+.theme-switcher-header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.settings-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #4CAF50;
+}
+
+.settings-card h3 {
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings-card h3 i {
+    color: #4CAF50;
+}
+
+
+/* Setting Items */
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 10px 0;
+}
+
+
+/* Toggle Switch */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #4CAF50;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+
+/* Form Groups */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+/* Buttons */
+
+.save-btn,
+.action-btn {
+    width: 100%;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.action-btn {
+    background: #6c757d;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.save-btn:hover {
+    background: #45a049;
+}
+
+.action-btn:hover {
+    background: #5a6268;
+}
+
+
+/* Dark Theme for Settings */
+
+.dark-theme .settings-card {
+    background: #2d2d2d;
+    color: white;
+}
+
+.dark-theme .settings-card h3 {
+    color: white;
+}
+
+.dark-theme .form-group input {
+    background: #3d3d3d;
+    color: white;
+    border-color: #555;
+}
+
+.dark-theme .form-group label {
+    color: white;
+}
+
+.dark-theme .setting-item span {
+    color: white;
+}
+
+
+/* Success Message Styles */
+
+.success-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #d4edda;
+    color: #155724;
+    padding: 12px 15px;
+    border-radius: 5px;
+    border: 1px solid #c3e6cb;
+    margin-top: 15px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.success-message i {
+    color: #28a745;
+    font-size: 18px;
+}
+
+
+/* Loading animation */
+
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Button disabled state */
+
+.save-btn:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+
+/* Dark theme support */
+
+.dark-theme .success-message {
+    background: #1e3a2a;
+    color: #90ee90;
+    border-color: #2d5a3d;
+}
+
+
+/* Security Form Styles */
+
+.security-form {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 4px solid #007bff;
+}
+
+.security-form h4 {
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancel-btn {
+    padding: 12px 20px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.cancel-btn:hover {
+    background: #5a6268;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+
+/* QR Code Simulator */
+
+.qr-code-placeholder {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.qr-simulator {
+    width: 200px;
+    height: 200px;
+    background: white;
+    border: 2px dashed #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.qr-lines {
+    width: 80%;
+    height: 80%;
+    background: linear-gradient(90deg, transparent 49%, #000 49%, #000 51%, transparent 51%), linear-gradient(transparent 49%, #000 49%, #000 51%, transparent 51%);
+    background-size: 20px 20px;
+    opacity: 0.3;
+}
+
+.qr-text {
+    position: absolute;
+    bottom: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+
+/* Dark theme support */
+
+.dark-theme .security-form {
+    background: #2d2d2d;
+    border-left-color: #4dabf7;
+}
+
+.dark-theme .security-form h4 {
+    color: white;
+}
+
+.dark-theme .qr-simulator {
+    background: #3d3d3d;
+    border-color: #555;
+}
+
+.dark-theme .qr-text {
+    color: #ccc;
 }
