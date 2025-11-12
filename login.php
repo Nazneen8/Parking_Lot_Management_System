@@ -6,9 +6,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
     
-    // Pre-approved demo credentials - FIXED PASSWORD
+    // Pre-approved demo credentials 
     $valid_logins = [
-        'student@example.com' => 'Password123!', // CHANGED FROM 'Pass123!'
+        'ST10456789@rcconnect.edu.za' => 'Password123!', // CHANGED FROM 'Pass123!'
         'admin@example.com' => 'Admin123!', 
         'test@example.com' => 'Test123!',
         'demo@example.com' => 'Demo123!'
